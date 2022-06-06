@@ -13,6 +13,10 @@ const jerseySchema = new mongoose.Schema(
         team: {
             type: String, 
             required: true,
+        },
+        price: {
+            type: Number,
+            required: true,
         }
     }
 )
