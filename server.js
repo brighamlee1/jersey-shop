@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
     res.send('hello world');
 })
 
-app.get('/jerseys', (req, res) => {
+app.get('/jerseys', async (req, res) => {
     res.json(jerseys);
 })
 
