@@ -16,5 +16,371 @@
         "team": "Golden State Warriors Rookie",
         "image": "https://d2j6dbq0eux0bg.cloudfront.net/images/24479407/1422628972.jpg",
         "price": 44.99
+    },
+    {
+        "name": "Kobe Bryant",
+        "team": "L.A. Lakers Royal",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3633000/altimages/ff_3633450-35489f2e237d004eb8dcalt1_full.jpg&w=900",
+        "price": 48.99
+    },
+    {
+        "name": "Shaquille O'neal",
+        "team": "Orlando Magic Rookie",
+        "image": "https://cdn.shopify.com/s/files/1/0993/8094/products/mitchell-ness-adult-jersey-shaquille-o-neal-orlando-magic-mitchell-ness-blue-throwback-swingman-jersey-28518024118351_1344x1344.jpg?v=1627990327",
+        "price": 44.99
+    },
+    {
+        "name": "Clyde Drexler",
+        "team": "Portland Trailblazers",
+        "image": "https://m.media-amazon.com/images/I/710KPn+4MRL._AC_SX425_.jpg",
+        "price": 39.99
+    },
+    {
+        "name": "Shai Gilgeous-Alexander",
+        "team": "Oklahoma City Thunder City",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4198000/altimages/ff_4198859-c13e4d9d464ef37dc85falt1_full.jpg&w=900",
+        "price": 39.99
+    },
+    {
+        "name": "Kevin Durant",
+        "team": "Seattle Supersonics Rookie",
+        "image": "https://images.footballfanatics.com/FFImage/thumb.aspx?i=/productimages/_3641000/altimages/ff_3641683-9f8fe168d87b9c50b060alt1_full.jpg&w=900",
+        "price": 49.99
+    },
+    {
+        "name": "Jayson Tatum",
+        "team": "Boston Celtics City",
+        "image": "https://images.footballfanatics.com/FFImage/thumb.aspx?i=/productimages/_3663000/altimages/ff_3663079-1f47540237fddea1c4cbalt1_full.jpg&w=900",
+        "price": 44.99
+    },
+    {
+        "name": "Nikola Jokic",
+        "team": "Denver Nuggets City",
+        "image": "https://img.btdmp.com/10327/10327842/products/0x1080@16531029201ed46cdb44.jpeg",
+        "price": 44.99
+    },
+    {
+        "name": "Julius Erving",
+        "team": "Philadelphia 76ers",
+        "image": "https://static.mitchellandness.com/media/catalog/product/cache/d60d2a6073e369a1f5c25b7852c8ea96/s/m/smjylg18021-p76roya76jer_1.jpg",
+        "price": 49.99
+    },
+    {
+        "name": "Larry Bird",
+        "team": "Boston Celtics",
+        "image": "https://images.footballfanatics.com/FFImage/thumb.aspx?i=/productimages/_3278000/altimages/ff_3278319-c16a086e57a66b9a6364alt1_full.jpg&w=900",
+        "price": 49.99
+    },
+    {
+        "name": "Magic Johnson",
+        "team": "Los Angleles Lakers",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3278000/altimages/ff_3278328-fd4799f836729933e68ealt1_full.jpg&w=900",
+        "price": 49.99
+    },
+    {
+        "name": "Allen Iverson",
+        "team": "Philadelphia 76ers",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_1833000/ff_1833911_xl.jpg&w=600",
+        "price": 49.99
+    },
+    {
+        "name": "Carmelo Anthony",
+        "team": "Denver Nuggets",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4164000/ff_4164333-38117b3e741b50755e4e_full.jpg",
+        "price": 45.99
+    },
+    {
+        "name": "Lebron James",
+        "team": "Cleveland Cavaliers",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_2751000/altimages/ff_2751344alt1_full.jpg&w=900",
+        "price": 49.99
+    },
+    {
+        "name": "Kareem Abdul-Jabbar",
+        "team": "Milwaukee Bucks",
+        "image": "https://cdn.shoplightspeed.com/shops/603842/files/36508131/650x750x2/image.jpg",
+        "price": 45.99
+    },
+    {
+        "name": "Bill Russell",
+        "team": "Boston Celtics",
+        "image": "https://static.mitchellandness.com/media/catalog/product/cache/d60d2a6073e369a1f5c25b7852c8ea96/s/m/smjygs18140-bcekygn62brs_1.jpg",
+        "price": 44.99
+    },
+    {
+        "name": "Wilt Chamberlain",
+        "team": "Philadelphia 76ers",
+        "image": "https://static.mitchellandness.com/media/catalog/product/cache/d60d2a6073e369a1f5c25b7852c8ea96/a/j/ajy4cp19159-p76roya66wcm_1.jpg",
+        "price": 46.99
+    },
+    {
+        "name": "Tim Duncan",
+        "team": "San Antonio Spurs",
+        "image": "https://images.footballfanatics.com/FFImage/thumb.aspx?i=/productimages/_2751000/altimages/FF_2751375ALT1_full.jpg&w=900",
+        "price": 43.99
+    },
+    {
+        "name": "Hakeem Olajuwon",
+        "team": "Houston Rockets",
+        "image": "https://images.footballfanatics.com/houston-rockets/houston-rockets-hakeem-olajuwon-1993-94-hardwood-classics-road-swingman-jersey-by-mitchell-and-ness-red-mens_ss4_p-11882392+u-14l171zei745iv5skd8w+v-b7d502fb190a41f98e12e73f64c91ff0.jpg?_hv=1&w=900",
+        "price": 47.99
+    },
+    {
+        "name": "Oscar Robertson",
+        "team": "Cincinnati Royals",
+        "image": "https://img.btdmp.com/10327/10327842/products/0x540@16531027691c3d036845.jpeg",
+        "price": 49.99
+    },
+    {
+        "name": "Karl Malone",
+        "team": "Utah Jazz",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3631000/altimages/ff_3631746-6cec0457a22eea8c93a7alt1_full.jpg&w=900",
+        "price": 45.99
+    },
+    {
+        "name": "Moses Malone",
+        "team": "Philadelphia 76ers",
+        "image": "https://img.btdmp.com/10327/10327842/products/0x1080@1653103097ab7c1f7e35.jpeg",
+        "price": 42.99
+    },
+    {
+        "name": "Kevin Garnett",
+        "team": "Minnesota Timberwolves",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3419000/altimages/ff_3419569-67a9494f6d87ce172cc0alt1_full.jpg&w=900",
+        "price": 45.99
+    },
+    {
+        "name": "Jerry West",
+        "team": "Los Angeles Lakers",
+        "image": "https://slimages.macysassets.com/is/image/MCY/products/5/optimized/11203445_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1",
+        "price": 47.99
+    },
+    {
+        "name": "Dirk Nowitzki",
+        "team": "Dallas Mavericks Rookie",
+        "image": "https://m.media-amazon.com/images/I/7156gIMPOvL._AC_SX425_.jpg",
+        "price": 48.99
+    },
+    {
+        "name": "Elgin Baylor",
+        "team": "Los Angeles Lakers",
+        "image": "https://static.mitchellandness.com/media/catalog/product/cache/d60d2a6073e369a1f5c25b7852c8ea96/s/m/smjylg19013-lalroya60eby_1.jpg",
+        "price": 43.99
+    },
+    {
+        "name": "Dwyane Wade",
+        "team": "Miami Heat City",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3077000/ff_3077724-ef7478157d7de2beb79b_full.jpg&w=600",
+        "price": 49.99
+    },
+    {
+        "name": "David Robinson",
+        "team": "San Antonio Spurs",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3641000/altimages/ff_3641649-27478f61a0084cadbe62alt1_full.jpg&w=900",
+        "price": 41.99
+    },
+    {
+        "name": "Giannis Antetokounmpo",
+        "team": "Milwaukee Bucks",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3774000/altimages/ff_3774132-c160b142112e7376c14dalt1_full.jpg&w=900",
+        "price": 44.99
+    },
+    {
+        "name": "Charles Barkley",
+        "team": "Phoenix Suns",
+        "image": "https://cdn.shopify.com/s/files/1/0571/7901/3154/products/1994-96_suns_barkley_34_champion_europe_alt._front__1_1000x1397.jpg?v=1650103722",
+        "price": 45.99
+    },
+    {
+        "name": "Isiah Thomas",
+        "team": "Detroit Pistons",
+        "image": "https://images.footballfanatics.com/detroit-pistons/detroit-pistons-isiah-thomas-1988-hardwood-classics-road-swingman-jersey-by-mitchell-and-ness-royal-mens_ss4_p-11892998+u-rneu07sg5heab736r7q7+v-3f9880d49f264a0da36c1baa6bf22713.jpg?_hv=1&w=900",
+        "price": 47.99
+    },
+    {
+        "name": "Scottie Pippen",
+        "team": "Chicago Bulls",
+        "image": "https://images.footballfanatics.com/chicago-bulls/chicago-bulls-scottie-pippen-1997-hardwood-classics-raod-swingman-jersey-scarlett-mens_ss4_p-11879827+u-8deb4zkjfa5ruz21y97c+v-52b2d0ff7c0348d19999070efec63603.jpg?_hv=1&w=900",
+        "price": 47.99
+    },
+    {
+        "name": "Chris Paul",
+        "team": "New Orleans Hornets",
+        "image": "https://slimages.macysassets.com/is/image/MCY/products/7/optimized/15931977_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1",
+        "price": 45.99
+    },
+    {
+        "name": "John Stockton",
+        "team": "Utah Jazz",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3641000/altimages/ff_3641684-87d80e156c1a4f6a338calt1_full.jpg&w=900",
+        "price": 47.99
+    },
+    {
+        "name": "Steve Nash",
+        "team": "Phoenix Suns",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_2751000/altimages/ff_2751382alt1_full.jpg&w=900",
+        "price": 49.99
+    },
+    {
+        "name": "Kawhi Leonard",
+        "team": "Toronto Raptors",
+        "image": "https://cdna.lystit.com/photos/macys/95f0f3bc/nike-Red-Kawhi-Leonard-Toronto-Raptors-Icon-Swingman-Jersey.jpeg",
+        "price": 42.99
+    },
+    {
+        "name": "Patrick Ewing",
+        "team": "New York Knicks",
+        "image": "https://i5.walmartimages.com/asr/8320f9a8-fe72-4c54-bf6e-04003ddc3239.bad24057b236928b72374204117afcdc.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+        "price": 39.99
+    },
+    {
+        "name": "Rick Barry",
+        "team": "Golden State Warriors",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4106000/altimages/ff_4106147-7ab7d5fc1f812ea9ae24alt1_full.jpg&w=900",
+        "price": 39.99
+    },
+    {
+        "name": "Bob Cousy",
+        "team": "Boston Celtics",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4563000/altimages/ff_4563535-7086bfbf389d1615e703alt1_full.jpg&w=900",
+        "price": 39.99
+    },
+    {
+        "name": "Jason Kidd",
+        "team": "New Jersey Nets",
+        "image": "https://www.stadionshop.com/media/catalog/product/cache/61f82b9c716a2869aa27bf290bb56a69/3/2/32072-32073-32074-32074-s3930_jason_kidd_5_new_jersey_nets_2006-07_mitchell_ness_swingman_dres_1.jpg",
+        "price": 44.99
+    },
+    {
+        "name": "James Harden",
+        "team": "Hoston Rockets",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3774000/altimages/ff_3774114-4bea46320a1ab64effb3alt1_full.jpg&w=900",
+        "price": 43.99
+    },
+    {
+        "name": "Gary Payton",
+        "team": "Seattle Supersonics",
+        "image": "https://www.stadionshop.com/media/catalog/product/cache/49dd6f9534a90e09ba15789dc1a6437b/3/3/33158-33159-33160-33161-s4130_gary_payton_20_seattle_supersonics_1995-96_mitchell_ness_road_swingman_dres_1.jpg",
+        "price": 47.99
+    },
+    {
+        "name": "Dominique Wilkins",
+        "team": "Atlanta Hawks",
+        "image": "https://cdn.shopify.com/s/files/1/0308/9668/5196/products/NBA_Dominique_Wilkins_Atlanta_Hawks_21_Retro_Jersey_w_1500x.jpg?v=1617810853",
+        "price": 44.99
+    },
+    {
+        "name": "George Gervin",
+        "team": "San Antonio Spurs",
+        "image": "https://media.kohlsimg.com/is/image/kohls/5249921?wid=600&hei=600&op_sharpen=1",
+        "price": 45.99
+    },
+    {
+        "name": "Anthony Davis",
+        "team": "New Orleans Hornets",
+        "image": "https://www.nbashoponline.icu/image/cache//nbaproducts/anthony-davis-new-orleans-hornets-swingman-creole-blue-jersey-800x650.jpg",
+        "price": 46.99
+    },
+    {
+        "name": "James Worthy",
+        "team": "Los Angeles Lakers",
+        "image": "https://i5.walmartimages.com/asr/7b0d8c94-7b4f-4521-a1f6-0d4ba783048b_1.f3577307bc2909e7c3dcbd01bf65bee8.jpeg",
+        "price": 39.99
+    },
+    {
+        "name": "Paul Pierce",
+        "team": "Boston Celtics",
+        "image": "http://cdn.shopify.com/s/files/1/0308/9668/5196/products/NBA_Paul_Pierce_Boston_Celtics_34_Retro_Jersey.jpg?v=1617810957",
+        "price": 41.99
+    },
+    {
+        "name": "Damian Lillard",
+        "team": "Portland Trail Blazers",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4254000/altimages/ff_4254517-767c92eac2f6a74275b5alt1_full.jpg&w=900",
+        "price": 43.99
+    },
+    {
+        "name": "Reggie Miller",
+        "team": "Indiana Pacers",
+        "image": "https://www.pacersfansshop.com/img/?&w=525&img=Indiana_Pacers/Indiana_Pacers_41106.jpg",
+        "price": 46.99
+    },
+    {
+        "name": "Ray Allen",
+        "team": "Milwaukee Bucks",
+        "image": "https://www.stadionshop.com/media/catalog/product/cache/49dd6f9534a90e09ba15789dc1a6437b/3/1/31810-31811-31812-s3883_ray_allen_34_milwaukee_bucks_1996-97_mitchell_ness_swingman_dres_1.jpg",
+        "price": 48.99
+    },
+    {
+        "name": "Pau Gasol",
+        "team": "Memphis Grizzlies",
+        "image": "https://static.basketrevolution.es/media/catalog/product/cache/2/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/m/i/mitchell___ness_swingman_jersey_memphis_grizzlies_pau_gasol_2001-02_smjylg19015_1.jpg",
+        "price": 42.99
+    },
+    {
+        "name": "Walt Frazier",
+        "team": "New York Knicks",
+        "image": "https://static.mitchellandness.com/media/catalog/product/cache/d60d2a6073e369a1f5c25b7852c8ea96/7/2/7226a_nyk_72wfra2_318_1.jpg",
+        "price": 40.99
+    },
+    {
+        "name": "Dwight Howard",
+        "team": "Orlando Magic",
+        "image": "http://cdn.shopify.com/s/files/1/1170/7088/products/Adidas_INT_Swingman_NBA_Orlando_Magic_Jersey_Dwight_HOWARD_12_Y38363_Blue._Sportstar_Pro_Newcastle_2300_NSW._Australia._3_grande.jpg?v=1520594964",
+        "price": 45.99
+    },
+    {
+        "name": "Dennis Rodman",
+        "team": "Chicago Bulls",
+        "image": "https://cdn.shopify.com/s/files/1/0993/8094/products/mitchell-ness-youth-jersey-youth-dennis-rodman-chicago-bulls-magic-mitchell-ness-black-nba-throwback-jersey-27942605389903.png?v=1614813147",
+        "price": 43.99
+    },
+    {
+        "name": "Pete Maravich",
+        "team": "Atlanta Hawks",
+        "image": "https://static.mitchellandness.com/media/catalog/product/cache/d60d2a6073e369a1f5c25b7852c8ea96/s/m/smjycp18193-aharoya71pma_1.jpg",
+        "price": 48.99
+    },
+    {
+        "name": "Vince Carter",
+        "team": "Toronto Raptors",
+        "image": "https://images.dickssportinggoods.com/is/image/GolfGalaxy/20MNNYNBRPTRSPRPCTOR?qlt=70&wid=600&fmt=pjpeg",
+        "price": 47.99
+    },
+    {
+        "name": "Tracy McGrady",
+        "team": "Orlando Magic",
+        "image": "http://cdn.shopify.com/s/files/1/0308/9668/5196/products/NBA_Orlando_Magic_Tracy_McGrady_1_Jersey_Blue.jpg?v=1617806397",
+        "price": 46.99
+    },
+    {
+        "name": "Paul George",
+        "team": "Oklahoma City Thunder",
+        "image": "https://images.footballfanatics.com/FFImage/thumb.aspx?i=/productimages/_3038000/altimages/ff_3038121alt1_full.jpg&w=900",
+        "price": 43.99
+    },
+    {
+        "name": "Kyrie Irving",
+        "team": "Boston Celtics",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_2920000/altimages/ff_2920514alt1_full.jpg&w=900",
+        "price": 39.99
+    },
+    {
+        "name": "Luka Doncic",
+        "team": "Dallas Mavericks City",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4250000/altimages/ff_4250632-112a737146db16c9ae60alt1_full.jpg&w=900",
+        "price": 45.99
+    },
+    {
+        "name": "Joel Embiid",
+        "team": "Philadelphia 76ers",
+        "image": "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3773000/altimages/ff_3773205-1e1da3946540369969a0alt1_full.jpg&w=900",
+        "price": 42.99
+    },
+    {
+        "name": "Ja Morant",
+        "team": "Memphis Grizzlies Throwback",
+        "image": "https://cdn.shopify.com/s/files/1/0565/7182/2285/products/thumb.jpg?v=1619552101",
+        "price": 48.99
     }
 ]

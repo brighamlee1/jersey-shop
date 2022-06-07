@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
-const { findById } = require("../models/Jersey");
+const { Jersey } = require("../models/Jersey");
 
 router.get("/", async (req, res, next) => {
     try {
