@@ -17,6 +17,10 @@ const jerseySchema = new mongoose.Schema(
         price: {
             type: Number,
             required: true,
+        },
+        reviews: {
+            type: mongoose.Types.ObjectId,
+            ref: "Review",
         }
     }
 )
