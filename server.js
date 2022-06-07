@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const controllers = require('./controllers')
 
 // Import JSON files
 const jerseys = require('./jerseys.json')
@@ -11,10 +12,10 @@ require("./config/db.connection");
 
 // Middleware
 app.use(cors());
+app.use("/", controllers.jersey);
+app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send('hello world');
-})
+app.use(express.urlencoded({ extended: false }));
 
 app.get('/jerseys', async (req, res) => {
     res.json(jerseys);
