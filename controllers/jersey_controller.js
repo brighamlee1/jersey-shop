@@ -14,4 +14,15 @@ router.get("/", async (req, res, next) => {
     }
 })
 
+router.get("/:id", async (req, res, next) => {
+    try {
+        const jersey = await db.Jersey.findById();
+        res.status(200).json(jersey);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
 module.exports = router;
