@@ -16,7 +16,7 @@ router.get("/", async (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
     try {
-        const jersey = await db.Jersey.findById();
+        const jersey = await db.Jersey.findById(req.params.id);
         res.status(200).json(jersey);
     } catch (error) {
         console.log(error);
