@@ -12,7 +12,7 @@ require("./config/db.connection");
 
 // Middleware
 app.use(cors());
-app.use("/", controllers.jersey);
+app.use("/jerseys", controllers.jersey);
 app.use("/auth", controllers.auth)
 app.use(express.json());
 
