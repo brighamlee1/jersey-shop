@@ -6,6 +6,10 @@ const reviewSchema = new mongoose.Schema(
             type: mongoose.Types.ObjectId,
             ref: "User",
         },
+        jersey: {
+            type: mongoose.Types.ObjectId,
+            ref: "Jersey",
+        },
         stars: {
             type: Number,
             min: 1,
