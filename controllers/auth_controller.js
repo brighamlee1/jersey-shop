@@ -1,16 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
-const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const asyncHandler = require('express-async-handler');
-const Joi = require('joi');
 let bodyParser = require('body-parser');
 let jsonParser = bodyParser.json();
 
-router.post("/register", jsonParser, asyncHandler(async (req, res) => {
+router.post("/register", jsonParser, asyncHandler(async (req, res, next) => {
     try {
-        console.log(req.body)
         const user = await db.User.findOne({ email: req.body.email });
         if (user)
             return res.status(409).send({ message: "User with given email already exists" })
@@ -20,17 +17,15 @@ router.post("/register", jsonParser, asyncHandler(async (req, res) => {
         let newUser = await db.User.create({ ...req.body, password: hashPassword })
         console.log(newUser)
         res.json(newUser);
-        // res.status(201).send({ message: "User created" })
+        console.log(req.session);
     } catch (error) {
         console.log(error)
         res.status(400).json(error)
-        // res.status(500).send({ message: "Internal server error" })
     }
 }))
 
-router.post('/login', jsonParser, asyncHandler(async (req, res) => {
+router.post('/login', jsonParser, asyncHandler(async (req, res, next) => {
     try {
-        console.log(req.body)
         const user = await db.User.findOne({ email: req.body.email });
         if (!user)
             return res.status(400).send({ message: error.details[0].message })
@@ -42,16 +37,38 @@ router.post('/login', jsonParser, asyncHandler(async (req, res) => {
         req.session.currentUser = {
             id: user._id,
             username: user.username,
-            profilePic: user.profilePic,
+            profile: user.profile,
         };
-        const token = user.generateAuthToken();
-        console.log(token)
-        res.status(200).send({ data: token, message: "Logged in successfully" });
-
+        req.session.save();
+        console.log(req.session)
+        res.send(req.session.currentUser)
     } catch (error) {
         console.log(error)
         res.status(400).json(error)
+        return next();
     }
 }))
+
+router.get('/logout', jsonParser, (req, res) => {
+    try {
+        console.log(req.session)
+        req.session.destroy();
+        res.clearCookie('connect.sid')
+        res.redirect('/auth/login')
+    } catch (error) {
+        console.log(error);
+        res.send(error);
+    }
+})
+
+// router.post('/logout', (req, res) => {
+//     try {
+//         req.session.destroy()
+//         res.clearCookie('connect.sid') // clean up!
+//         return res.json({ msg: 'logging you out' })
+//     } catch {
+//         return res.json({ msg: 'no user to log out!' })
+//     }
+// })
 
 module.exports = router;

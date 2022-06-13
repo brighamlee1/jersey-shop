@@ -4,8 +4,10 @@ const db = require('../models');
 
 router.get("/", async (req, res, next) => {
     try {
-        const jerseys = await db.Jersey.find().populate(db.User);
+        const jerseys = await db.Jersey.find();
         res.status(200).json(jerseys);
+        console.log(req.session);
+        console.log(req.session.id);
     } catch (error) {
         console.log(error);
         req.error = error;
@@ -13,12 +15,19 @@ router.get("/", async (req, res, next) => {
     }
 })
 
-router.get("/:id", async (req, res, next) => {
+
+
+router.post("/:id/review", async (req, res, next) => {
     try {
         const jersey = await db.Jersey.findById(req.params.id);
-        const reviews = await db.Review.find();
-        res.status(200).json(jersey);
-        res.status(200).json(reviews);
+        console.log(req.session.currentUser)
+        console.log(jersey);
+        let createdReview = await db.Review.create({
+            ...req.body,
+            jersey: jersey
+        })
+        res.status(200).json(createdReview)
+        console.log(req.session.currentUser);
     } catch (error) {
         console.log(error);
         req.error = error;
@@ -26,11 +35,21 @@ router.get("/:id", async (req, res, next) => {
     }
 })
 
-// router.get("/:id/reviews", async (req, res, next) => {
+router.get("/:id/review", async (req, res, next) => {
+    try {
+        const reviews = await db.Review.find({ jersey: req.params.id }).populate("user");
+        res.status(200).json(reviews);
+    }
+    catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
+// router.post("/:id/wishlist", async (req, res, next) => {
 //     try {
-//         // Need to add .populate('user') below
-//         const reviews = await db.Review.find();
-//         res.status(200).json(reviews);
+
 //     } catch (error) {
 //         console.log(error);
 //         req.error = error;
@@ -38,11 +57,10 @@ router.get("/:id", async (req, res, next) => {
 //     }
 // })
 
-router.post("/:id/reviews", async (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
     try {
-        await db.Review.create({
-            user
-        })
+        const jersey = await db.Jersey.findById(req.params.id).populate("reviews")
+        res.json(jersey);
     } catch (error) {
         console.log(error);
         req.error = error;
