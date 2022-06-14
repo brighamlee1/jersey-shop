@@ -6,8 +6,6 @@ router.get("/", async (req, res, next) => {
     try {
         const jerseys = await db.Jersey.find();
         res.status(200).json(jerseys);
-        console.log(req.session);
-        console.log(req.session.id);
     } catch (error) {
         console.log(error);
         req.error = error;
@@ -27,7 +25,6 @@ router.post("/:id/review", async (req, res, next) => {
             jersey: jersey
         })
         res.status(200).json(createdReview)
-        console.log(req.session.currentUser);
     } catch (error) {
         console.log(error);
         req.error = error;

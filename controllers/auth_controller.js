@@ -5,6 +5,9 @@ const bcrypt = require('bcryptjs');
 const asyncHandler = require('express-async-handler');
 let bodyParser = require('body-parser');
 let jsonParser = bodyParser.json();
+let jwt = require("jsonwebtoken");
+const { User } = require('../models');
+const { token } = require('morgan');
 
 router.post("/register", jsonParser, asyncHandler(async (req, res, next) => {
     try {
@@ -17,12 +20,47 @@ router.post("/register", jsonParser, asyncHandler(async (req, res, next) => {
         let newUser = await db.User.create({ ...req.body, password: hashPassword })
         console.log(newUser)
         res.json(newUser);
-        console.log(req.session);
     } catch (error) {
         console.log(error)
         res.status(400).json(error)
     }
 }))
+
+let refreshTokens = [];
+
+router.post('/refresh', (req, res) => {
+    const refreshToken = req.body.token;
+
+    if (!refreshToken) return res.status(401).json("You are not authenticated!");
+    if (!refreshTokens.includes(refreshToken)) {
+        return res.status(403).json("Refresh token is valid!")
+    }
+    jwt.verify(refreshToken, "secretrefreshkey", (err, user) => {
+        err && console.log(err);
+        refreshTokens = refreshTokens.filter((token) => token !== refreshToken);
+        const newAccessToken = createAccessToken(user);
+        const newRefreshToken = createRefreshToken(user);
+
+        refreshTokens.push(newRefreshToken);
+
+        res.status(200).json({
+            accessToken: newAccessToken,
+            refreshToken: newRefreshToken,
+        })
+    })
+})
+
+const createAccessToken = (user) => {
+    return jwt.sign(
+        { email: user.email }, "secretaccesskey", { expiresIn: '1d' }
+    )
+}
+
+const createRefreshToken = (user) => {
+    return jwt.sign(
+        { email: user.email }, "secretrefreshkey", { expiresIn: '1d' }
+    )
+}
 
 router.post('/login', jsonParser, asyncHandler(async (req, res, next) => {
     try {
@@ -34,32 +72,77 @@ router.post('/login', jsonParser, asyncHandler(async (req, res, next) => {
         )
         if (!validPassword)
             return res.status(400).send({ message: error.details[0].message })
-        req.session.currentUser = {
-            id: user._id,
+        const accessToken = createAccessToken(user);
+        const refreshToken = createRefreshToken(user);
+
+        refreshTokens.push(refreshToken);
+
+        res.json({
+            email: user.email,
             username: user.username,
             profile: user.profile,
-        };
-        req.session.save();
-        console.log(req.session)
-        res.send(req.session.currentUser)
+            reviews: user.reviews,
+            accessToken,
+            refreshToken,
+            user: accessToken,
+            status: 'ok',
+        })
+
     } catch (error) {
         console.log(error)
-        res.status(400).json(error)
+        res.json({ status: "error", user: false })
         return next();
     }
 }))
 
-router.get('/logout', jsonParser, (req, res) => {
+router.get("/status", async (req, res) => {
+    const token = req.headers["x-acess-token"];
+
     try {
-        console.log(req.session)
-        req.session.destroy();
-        res.clearCookie('connect.sid')
-        res.redirect('/auth/login')
+        const decoded = jwt.verify(token, "secretaccesskey");
+        const email = decoded.email;
+        const user = await db.User.findOne({ email: email });
+        return res.json({
+            status: "ok",
+            username: user.username,
+            email: user.email,
+            profile: user.profile,
+            reviews: user.reviews,
+        });
+    } catch (error) {
+        console.log(error);
+        // res.json({ status: "error", error: "invalid token" });
+    }
+});
+
+// const verify = (req, res, next) => {
+//     const authHeader = req.headers.authorization;
+//     if (authHeader) {
+//         const token = authHeader.splt(" ")[1];
+
+//         jwt.verify(token, "secretaccesskey", (err, user) => {
+//             if (err) {
+//                 return res.status(403).json("Token is not valid!")
+//             }
+//             req.user = user;
+//         })
+//     }
+//     else {
+//         res.status(401).json("You are not authenticated!")
+//     }
+// }
+
+router.post('/logout', (req, res) => {
+    try {
+        const refreshToken = req.body.token;
+        refreshTokens = filter((token) => token !== refreshToken)
+        res.status(200).json("You logged out successfully")
     } catch (error) {
         console.log(error);
         res.send(error);
     }
 })
+
 
 // router.post('/logout', (req, res) => {
 //     try {

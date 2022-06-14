@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema(
         reviews: {
             type: mongoose.Types.ObjectId,
             ref: "Review",
-        }
+        },
     }
 )
 
