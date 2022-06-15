@@ -13,16 +13,16 @@ router.get("/", async (req, res, next) => {
     }
 })
 
-
-
 router.post("/:id/review", async (req, res, next) => {
     try {
         const jersey = await db.Jersey.findById(req.params.id);
-        console.log(req.session.currentUser)
-        console.log(jersey);
-        let createdReview = await db.Review.create({
+        const user = await db.User.find({ username: req.body.username })
+        console.log(user[0]);
+        console.log(jersey)
+        const createdReview = await db.Review.create({
             ...req.body,
-            jersey: jersey
+            jersey: jersey,
+            user: user[0],
         })
         res.status(200).json(createdReview)
     } catch (error) {

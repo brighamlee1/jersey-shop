@@ -28,27 +28,27 @@ router.post("/register", jsonParser, asyncHandler(async (req, res, next) => {
 
 let refreshTokens = [];
 
-router.post('/refresh', (req, res) => {
-    const refreshToken = req.body.token;
+// router.post('/refresh', (req, res) => {
+//     const refreshToken = req.body.token;
 
-    if (!refreshToken) return res.status(401).json("You are not authenticated!");
-    if (!refreshTokens.includes(refreshToken)) {
-        return res.status(403).json("Refresh token is valid!")
-    }
-    jwt.verify(refreshToken, "secretrefreshkey", (err, user) => {
-        err && console.log(err);
-        refreshTokens = refreshTokens.filter((token) => token !== refreshToken);
-        const newAccessToken = createAccessToken(user);
-        const newRefreshToken = createRefreshToken(user);
+//     if (!refreshToken) return res.status(401).json("You are not authenticated!");
+//     if (!refreshTokens.includes(refreshToken)) {
+//         return res.status(403).json("Refresh token is valid!")
+//     }
+//     jwt.verify(refreshToken, "secretrefreshkey", (err, user) => {
+//         err && console.log(err);
+//         refreshTokens = refreshTokens.filter((token) => token !== refreshToken);
+//         const newAccessToken = createAccessToken(user);
+//         const newRefreshToken = createRefreshToken(user);
 
-        refreshTokens.push(newRefreshToken);
+//         refreshTokens.push(newRefreshToken);
 
-        res.status(200).json({
-            accessToken: newAccessToken,
-            refreshToken: newRefreshToken,
-        })
-    })
-})
+//         res.status(200).json({
+//             accessToken: newAccessToken,
+//             refreshToken: newRefreshToken,
+//         })
+//     })
+// })
 
 const createAccessToken = (user) => {
     return jwt.sign(
@@ -74,14 +74,12 @@ router.post('/login', jsonParser, asyncHandler(async (req, res, next) => {
             return res.status(400).send({ message: error.details[0].message })
         const accessToken = createAccessToken(user);
         const refreshToken = createRefreshToken(user);
-
+            
         refreshTokens.push(refreshToken);
-
+        console.log(currentUser)
         res.json({
-            email: user.email,
-            username: user.username,
             profile: user.profile,
-            reviews: user.reviews,
+            username: user.username,
             accessToken,
             refreshToken,
             user: accessToken,
@@ -101,7 +99,7 @@ router.get("/status", async (req, res) => {
     try {
         const decoded = jwt.verify(token, "secretaccesskey");
         const email = decoded.email;
-        const user = await db.User.findOne({ email: email });
+        const user = await db.User.findOne({ email: email }).populate("reviews");
         return res.json({
             status: "ok",
             username: user.username,

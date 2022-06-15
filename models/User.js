@@ -21,28 +21,22 @@ const userSchema = new mongoose.Schema(
         },
         profile: {
             type: String,
-            default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdpRvftRBgfCbvzOHB0bANVih3QvZD-xZ4flbABUFGDctmaY87ajkJD5RhdvVcyZvkS7U&usqp=CAU'
+            default: 'https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png'
         },
-        reviews: {
-            type: mongoose.Types.ObjectId,
-            ref: "Review",
-        },
+        reviews: [
+            {
+                type: mongoose.Types.ObjectId,
+                ref: "Review",
+            }
+        ],
+        wishlist: [
+            {
+                type: mongoose.Types.ObjectId,
+                ref: 'Wishlist',
+            }
+        ]
     }
 )
-
-// userSchema.methods.generateAuthToken = function () {
-//     const token = jwt.sign({ _id: this._id }, process.env.JWT_SECRET, { expiresIn: "30d" });
-//     return token;
-// }
-
-// const validate = (data) => {
-//     const schema = Joi.object({
-//         username: Joi.string().email().required().label("Username"),
-//         email: Joi.string().email().required().label("Email"),
-//         password: passwordComplexity().required().label("Password")
-//     });
-//     return schema.validate(data);
-// }
 
 const User = mongoose.model("User", userSchema);
 
