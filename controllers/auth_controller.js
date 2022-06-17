@@ -19,7 +19,7 @@ router.post("/register", jsonParser, asyncHandler(async (req, res, next) => {
 
         let newUser = await db.User.create({ ...req.body, password: hashPassword })
         console.log(newUser)
-        res.json(newUser);
+        res.json({ newUser, status: 'ok' });
     } catch (error) {
         console.log(error)
         res.status(400).json(error)
@@ -74,12 +74,13 @@ router.post('/login', jsonParser, asyncHandler(async (req, res, next) => {
             return res.status(400).send({ message: error.details[0].message })
         const accessToken = createAccessToken(user);
         const refreshToken = createRefreshToken(user);
-            
+
         refreshTokens.push(refreshToken);
-        console.log(currentUser)
+
         res.json({
             profile: user.profile,
             username: user.username,
+            id: user._id,
             accessToken,
             refreshToken,
             user: accessToken,

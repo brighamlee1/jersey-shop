@@ -29,12 +29,7 @@ const userSchema = new mongoose.Schema(
                 ref: "Review",
             }
         ],
-        wishlist: [
-            {
-                type: mongoose.Types.ObjectId,
-                ref: 'Wishlist',
-            }
-        ]
+        wishListJersey: []
     }
 )
 

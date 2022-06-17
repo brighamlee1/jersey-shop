@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 
 itemSchema = new mongoose.Schema(
     {
-        wishlist: {
-            type: mongoose.Types.ObjectId,
-            ref: "Wishlist",
-        },
         jersey: {
             type: mongoose.Types.ObjectId,
             ref: "Jersey"
@@ -16,8 +12,11 @@ itemSchema = new mongoose.Schema(
         },
         size: {
             type: String,
-            required: true,
-            default: 'S'
+            required: true
+        },
+        wishlist: {
+            type: mongoose.Types.ObjectId,
+            ref: "Wishlist"
         }
     }
 )

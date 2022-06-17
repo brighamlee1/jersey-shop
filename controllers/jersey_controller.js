@@ -44,15 +44,52 @@ router.get("/:id/review", async (req, res, next) => {
     }
 })
 
-// router.post("/:id/wishlist", async (req, res, next) => {
-//     try {
+router.get("/:id/wishlist", async (req, res, next) => {
+    try {
+        const user = await db.User.findById(req.params.id);
+        console.log(user);
+        res.json(user);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 
-//     } catch (error) {
-//         console.log(error);
-//         req.error = error;
-//         return next();
-//     }
-// })
+router.post("/:id/wishlist", async (req, res, next) => {
+    try {
+        const jersey = await db.Jersey.findById(req.params.id);
+        const user = await db.User.find({ username: req.body.username });
+        const createdItem = await db.Item.create({
+            ...req.body,
+            jersey: jersey,
+            user: user[0],
+        })
+        res.status(200).json(createdItem);
+        const wishlist = user[0].wishlist;
+
+        await db.User.findOneAndUpdate(
+            { username: req.body.username },
+            {
+                $push: {
+                    wishListJersey: {
+                        image: createdItem.jersey.image,
+                        name: createdItem.jersey.name,
+                        team: createdItem.jersey.team,
+                        price: createdItem.jersey.price,
+                        size: createdItem.size,
+                    },
+                }
+            },
+        )
+        console.log(wishlist)
+        console.log(user[0]);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 
 router.get("/:id", async (req, res, next) => {
     try {
